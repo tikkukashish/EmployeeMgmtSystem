@@ -1,0 +1,83 @@
+@model EmployeeMgmtSystem.Models.Employee
+
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Create Employee</h3>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form asp-action="Create">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="EmpName" class="form-label fw-bold"></label>
+
+                            <input asp-for="EmpName"
+                                   class="form-control rounded-pill" />
+
+                            <span asp-validation-for="EmpName"
+                                  class="text-danger"></span>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="mobile" class="form-label fw-bold"></label>
+
+                            <input asp-for="mobile"
+                                   class="form-control rounded-pill" />
+
+                            <span asp-validation-for="mobile"
+                                  class="text-danger"></span>
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button type="submit"
+                                    class="btn btn-primary btn-lg rounded-pill">
+                                Create Employee
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="card-footer text-center bg-white">
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary rounded-pill">
+                        ← Back to List
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
